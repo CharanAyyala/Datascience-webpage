@@ -1,0 +1,501 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+    cursor:none;
+}
+
+/* Header Styles */
+header {
+    background-color: #151515;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+    cursor:none;
+}
+
+header h1 {
+    font-size:3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Navigation Menu Styles */
+nav {
+    background-color: #121212;
+    padding: 10px;
+    width: 100%;
+    animation: slideDown 0.5s ease-out;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #0A5EB0;
+    transform: scale(1.1);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+}
+
+.hamburger div {
+    height: 4px;
+    background-color: #fff;
+    width: 100%;
+}
+
+/* Mobile Menu Styles */
+.menu-links {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .menu-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu-links.active {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 20px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Content Section Styles */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ddd;
+    animation: fadeInUp 1s forwards;
+    letter-spacing: 2px;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #bbb;
+    animation: fadeInUp 1s forwards;
+    line-height: 1.6;
+}
+
+section ul {
+    list-style: none;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #bbb;
+    animation: fadeInUp 1s forwards;
+}
+
+section ul li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+section:nth-child(odd) {
+    background-color: #121212;
+}
+
+section:nth-child(even) {
+    background-color: #121212;
+}
+
+/* Special Styling for Home Section */
+#home h2 {
+    font-family: 'Bugatti', sans-serif;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+#home h2 span {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#home h2 span:hover {
+    color: #0A5EB0;
+    transform: scale(1.1);
+}
+
+/* Animations for Sections */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Achievements Section Animations */
+#achievements li::before {
+    content: '✔️';
+    position: absolute;
+    left: -20px;
+    font-size: 1.5rem;
+}
+
+/* Hover Effect for Staff and Text Elements */
+.staff ul li:hover {
+    background-color: #121212;
+    transform: translateY(0);
+}
+
+.staff ul li {
+    background-color: #555;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 1s forwards;
+}
+
+/* Keyframe Animations for List Items */
+@keyframes slideUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  text-align: center;
+  margin: 0;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.NRI-logo,.DARE-logo{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fcd2ef; /* Adjust the border width and color */
+}
+
+.member-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Text Box Styling */
+.text-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #151515;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.text-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.text-box-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.text-box:hover .text-box-img {
+  transform: rotate(10deg);
+}
+
+/* Content Styling */
+.text-box-content h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: whitesmoke;
+  transition: color 0.3s ease;
+}
+
+.text-box:hover .text-box-content h2 {
+  color: #007BFF;
+}
+
+.text-box-content p {
+  margin: 0;
+  color: whitesmoke;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.text-box:hover .text-box-content p {
+  color: #d1d1d1;
+}
+
+h3{
+  font-size:xx-large;
+}
+h4{
+  font-size:xx-large;
+}
+h5{
+  text-align: center;
+  font-size:xx-large;
+}
+
+.cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #899499; /* Blue color with transparency */
+  border-radius: 50%;
+  pointer-events: none; /* Prevent the cursor from blocking interactions */
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* Content Styling */
+.content {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+  color: #333;
+}
+.marquee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Marquee Row */
+.marquee-row {
+  display: flex;
+  gap: 20px;
+  animation: marquee 50s linear infinite;
+
+}
+
+/* Alternate Row Direction */
+.marquee-row:nth-child(even) {
+  animation-direction: reverse;
+}
+
+/* Images in Marquee */
+.marquee-row img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/* Lower Header */
+.lower-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  transition: background-color 0.3s ease;
+  font-family:Gill Sans (sans-serif);
+}
+
+/* Hover effect */
+.lower-header:hover {
+  color: #2867ee;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* Lower Info - Logo and Text */
+.lower-info {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between logo and text */
+}
+.DS.LOGO {
+  width: 200px;
+  height: 200px;
+  border-radius:50%;
+  animation: rotateLogo 5s linear infinite; /* Rotate infinitely with 5 seconds per full turn */
+}
+
+/* Keyframes for rotation */
+@keyframes rotateLogo {
+  0% {
+      transform: rotate(0deg); /* Start at 0 degrees */
+  }
+  100% {
+      transform: rotate(360deg); /* End at 360 degrees for a full rotation */
+  }
+}
+.social-links {
+  display: flex;
+  gap:20px;
+}
+
+/* Social Media Icons */
+.social-icon img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for social icons */
+.social-icon:hover img {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+.lower-nav {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center; /* Vertically align items */
+  gap: 10px;
+  color: white;
+}
+.special-member {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 12px;
+  background-color:#151515;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.special-member:hover .special-member-content h2{
+  color: #007BFF;
+}
+
+.special-member-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.special-member-content {
+  max-width:600px;
+  color: white;
+  text-align: center; /* Centers text horizontally */
+  margin: 0 auto; /* Ensures centered alignment within its container */
+}
+
+.special-member-content h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.special-member-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  transition: color 0.3s;
+}
+
